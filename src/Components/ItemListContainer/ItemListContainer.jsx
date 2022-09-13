@@ -3,7 +3,7 @@ import "./ItemListContainer.css"
 import { products } from "../../assets/productos"
 import { customFetch } from "../../utils/customFetch"
 import ItemList from "../ItemList/ItemList"
-import Spinner from 'react-bootstrap/Spinner';
+import ScaleLoader from "react-spinners/ScaleLoader";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const ItemListContainer = ({ greeting }) => {
@@ -25,9 +25,11 @@ const ItemListContainer = ({ greeting }) => {
             {loading 
                 ?
                 <div className="spinners">
-                <Spinner animation="border" variant="primary" />
-                <Spinner animation="border" variant="primary" />
-                <Spinner animation="border" variant="primary" />
+                <ScaleLoader color="blueviolet" />
+                <ScaleLoader color="cyan" />
+                <ScaleLoader color="blueviolet" />
+                <ScaleLoader color="cyan" />
+                <ScaleLoader color="blueviolet" />
                 </div>
                 :
                 <div className= "contenedorCards">

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import "./ItemListContainer.css"
 import { products } from "../../assets/productos"
 import { customFetch } from "../../utils/customFetch"
-import ItemList from "../ItemListContainer/ItemList"
+import ItemList from "../ItemList/ItemList"
 import Spinner from 'react-bootstrap/Spinner';
 import 'bootstrap/dist/css/bootstrap.min.css'
 

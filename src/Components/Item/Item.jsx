@@ -1,5 +1,5 @@
 import "./Item.css"
-import ItemCount from "../../Components/ItemCount"
+import ItemCount from "../ItemCount/ItemCount"
 
 const Item = ({product}) => {
     const onAdd = (contador) => {

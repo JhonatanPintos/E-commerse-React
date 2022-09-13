@@ -2,3 +2,13 @@
     text-align: center;
     color: blueviolet;
 }
+
+.spinners{
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorCards{
+    display: flex;
+    justify-content: space-around;
+}

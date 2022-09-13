@@ -1,0 +1,18 @@
+.itemCount{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    height: 30px;
+    gap: 5px;
+}
+
+.botones, .botones:hover {
+    background-color: blueviolet;
+    color: cyan;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none; 
+    border-radius: 10px;}
+    .botones:hover {
+      background-color: cyan;
+      color: blueviolet; }

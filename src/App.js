@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar from "./Components/Navbar/Navbar"
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer"
 
 const App = () =>{
 
@@ -17,6 +18,7 @@ const App = () =>{
         <Navbar nombre={nombre} id="1" apellido={apellido}>
         </Navbar>
         <ItemListContainer greeting = {mnjInicial}/>
+        <ItemDetailContainer/>
         </>
     )
 }

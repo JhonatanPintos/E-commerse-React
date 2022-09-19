@@ -8,10 +8,9 @@ const Item = ({product}) => {
     return(
         <>
         <div className="cards">
-        <p>{product.product}</p>
+        <p>{product.title}</p>
         <img className="imagen" src={product.image}/>
         <p>${product.price}</p>
-        <span>{product.description}</span>
         <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/>
         </div>
         </>

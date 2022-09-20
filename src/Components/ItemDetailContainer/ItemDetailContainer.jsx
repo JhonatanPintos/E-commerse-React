@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import "./ItemDetailContainer.css"
 
 const ItemDetailContainer = () => {
 
@@ -11,7 +12,6 @@ const ItemDetailContainer = () => {
                 const respuesta = await fetch("https://fakestoreapi.com/products/3")
                 const data = await respuesta.json()
                 setProducto(data)
-                console.log(data)
             }
             catch{
                 console.log("No responde la API")
@@ -23,7 +23,9 @@ const ItemDetailContainer = () => {
 
     return (
         <>
+        <div className="contenedorCardD">
         <ItemDetail producto={producto}/>
+        </div>
         </>
     )
 }

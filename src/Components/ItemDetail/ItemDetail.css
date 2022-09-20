@@ -1,0 +1,35 @@
+.bordeCardD{
+    display: flex;
+    border: 5px solid blueviolet;
+    width: 650px;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardD {
+    display: grid;
+    justify-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 350px;
+    height: 450px;
+    gap: 3px;
+    text-align: center;
+    align-items: center;
+    align-content:center ;
+}
+
+.imagenD{
+    display: grid;
+    justify-items: center;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    max-width: 50%;
+}
+
+.cardD p{
+    text-transform: uppercase;
+    font-weight: bold;
+}

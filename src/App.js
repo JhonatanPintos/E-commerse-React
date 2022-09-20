@@ -18,6 +18,7 @@ const App = () =>{
         <Navbar nombre={nombre} id="1" apellido={apellido}>
         </Navbar>
         <ItemListContainer greeting = {mnjInicial}/>
+        <br></br>
         <ItemDetailContainer/>
         </>
     )

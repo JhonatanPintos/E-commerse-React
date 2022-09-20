@@ -13,7 +13,6 @@ const ItemListContainer = ({ greeting }) => {
         fetch("https://fakestoreapi.com/products")
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             const lista = data.map((product)=>{
                 return {...product, stock:Math.floor(Math.random() * 100)}
             })
@@ -31,20 +30,9 @@ const ItemListContainer = ({ greeting }) => {
     return (
         <>
             <h1 className="titulo">{greeting}</h1>
-            {loading 
-                ?
-                <div className="spinners">
-                <ScaleLoader color="blueviolet" />
-                <ScaleLoader color="cyan" />
-                <ScaleLoader color="blueviolet" />
-                <ScaleLoader color="cyan" />
-                <ScaleLoader color="blueviolet" />
-                </div>
-                :
                 <div className= "contenedorCards">
                 <ItemList listProducts={listProducts} />
                 </div>
-            }
         </>
     )
 }

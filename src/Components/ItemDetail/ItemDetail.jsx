@@ -6,6 +6,7 @@ const ItemDetail = ({producto}) => {
     const onAdd = (contador) => {
         console.log("Se agrego a tu carrito")
     }
+    const stockTemporal = Math.floor(Math.random() * 100)
     return(
         <>
         <div className="bordeCardD">
@@ -13,9 +14,9 @@ const ItemDetail = ({producto}) => {
         <div className="cardD">
         <p>{producto.title}</p>
         <p>${producto.price}</p>
-        <p>{producto.stock}</p>
+        <p>{stockTemporal}</p>
         <span>{producto.description}</span>
-        <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}/>
+        <ItemCount stock={stockTemporal} initial={1} onAdd={onAdd}/>
         </div>
         </div>
         </>

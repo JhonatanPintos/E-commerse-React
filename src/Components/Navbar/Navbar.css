@@ -1,5 +1,14 @@
-header{
+.containerNav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+}
+
+.containerNav a{
+    text-align: center;
+}
+
+.imagenNav{
+    width: 380px;
+    max-width: 50%;
 }

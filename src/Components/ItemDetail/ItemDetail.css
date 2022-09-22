@@ -1,7 +1,7 @@
 .bordeCardD{
     display: flex;
     border: 5px solid blueviolet;
-    width: 650px;
+    width: 1000px;
     border-radius: 15px;
     justify-content: center;
     align-items: center;
@@ -12,19 +12,18 @@
     justify-items: center;
     border: 2px solid black;
     border-radius: 10px;
-    width: 350px;
-    height: 450px;
+    height: 500px;
     gap: 3px;
     text-align: center;
     align-items: center;
-    align-content:center ;
+    align-content:space-evenly ;
 }
 
 .imagenD{
     display: grid;
     justify-items: center;
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 500px;
     text-align: center;
     max-width: 50%;
 }

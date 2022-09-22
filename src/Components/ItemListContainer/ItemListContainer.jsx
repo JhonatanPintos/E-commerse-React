@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react"
 import "./ItemListContainer.css"
 import ItemList from "../ItemList/ItemList"
-import ScaleLoader from "react-spinners/ScaleLoader";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({ greeting }) => {
 
+    let {IdCategoria} = useParams()
+
     const [listProducts, setListProducts] = useState([])
-    const [loading, setLoading] = useState(true)
+
+    const URL_BASE= "https://fakestoreapi.com/products"
+    const URL_CATEGORY= "https://fakestoreapi.com/products/category/"
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
+        fetch(IdCategoria === undefined ? URL_BASE : `${URL_CATEGORY}${IdCategoria}`)
         .then(response => response.json())
         .then(data => {
             const lista = data.map((product)=>{
@@ -21,11 +25,8 @@ const ItemListContainer = ({ greeting }) => {
                 console.log("No responde la API")
                 console.error("No responde la API")
             })
-            .finally(()=>{
-                setLoading(false)
-            })
         })
-    }, [])
+    }, [IdCategoria])
 
     return (
         <>

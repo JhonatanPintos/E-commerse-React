@@ -11,10 +11,6 @@ const App = () =>{
     const nombre = "Jhonatan"
     const apellido = "Pintos"
 
-    const onAdd = (contador) => {
-        console.log("Se agrego a tu carrito")
-    }
-
     return (
         <>
         <BrowserRouter>

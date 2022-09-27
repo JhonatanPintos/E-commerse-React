@@ -2,9 +2,9 @@
 # Hola soy Jhonatan y este es mi proyecto 👋
 
 
-# E-Comerse-React
+# E-Commerse-React
 
-Es un E-comerse, piloto para probar y navegar, para hacer futuros e-comerse mas dinamicos
+Es un E-commerse, piloto para probar y navegar, para hacer futuros e-commerse mas dinamicos
 
 ![Logo](https://i.pinimg.com/originals/ab/ca/4c/abca4c51c7e166b2980105b5e98b7ac2.jpg)
 

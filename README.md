@@ -23,13 +23,13 @@ El Proyecto esta utilizando esta ApiWeb:
 
 
 
-## 🛠 Skills
+## 🛠 Habilidades
 Javascript, HTML, CSS...
 
 
 ## 🚀 Sobre mi
 Soy estudiante de CoderHouse, de la carrera Full Stack Developer
-## Authors
+## Autor/es
 
 - [@JhonatanPintos](https://github.com/JhonatanPintos)
 

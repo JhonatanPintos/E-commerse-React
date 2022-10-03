@@ -1,14 +1,18 @@
 import ItemCount from "../ItemCount/ItemCount"
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import { Link, NavLink } from "react-router-dom"
 import "./ItemDetail.css"
+import { Context } from "../CartContext/CartContext"
 
 const ItemDetail = ({producto}) => {
 
     const [irCarrito, setIrCarrito] = useState(false)
 
-    const onAdd = () => {
+    const {addItem, carrito} = useContext(Context)
+
+    const onAdd = (contador) => {
         setIrCarrito(true)
+        addItem(producto, contador)
     }
     const stockTemporal = Math.floor(Math.random() * 100)
     return(

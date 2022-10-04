@@ -21,7 +21,7 @@ const App = () => {
                         <Route path="/" element={<ItemListContainer greeting={mnjInicial} />} />
                         <Route path="/categoria/:IdCategoria" element={<ItemListContainer greeting={mnjInicial} />} />
                         <Route path="producto/:IdProducto" element={<ItemDetailContainer />} />
-                        <Route path="/carrito" element={<Carrito />} />
+                        <Route path="/carrito" element={<Carrito condicion={true}/>} />
                     </Routes>
                 </CartContext>
             </BrowserRouter>

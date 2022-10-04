@@ -8,7 +8,7 @@ const ItemDetail = ({producto}) => {
 
     const [irCarrito, setIrCarrito] = useState(false)
 
-    const {addItem, carrito} = useContext(Context)
+    const {addItem} = useContext(Context)
 
     const onAdd = (contador) => {
         setIrCarrito(true)

@@ -1,34 +1,44 @@
-import { experimentalStyled } from "@mui/material";
 import React, {useState, useEffect, createContext} from "react";
 
 export const Context = createContext()
 
-const CartContext = ({children}) => {
-    const [carrito, setCarrito] = useState ([])
+const CartContext = ({children}) => {    
+    const [cart, setCart] = useState ([])
+    const [precioT, setPrecioT] = useState(0)
+
+    useEffect(() => {
+            const total = 0
+            cart.forEach((item) => {
+                total += item.price * item.contador
+            })
+            setPrecioT(total)
+    },[])
 
     const addItem = (producto, contador) => {
         if(isInCart(producto.id)){
-
-
+            setCart(cart.map(item => {
+                return item.producto.id === producto.id ? {...item, contador: item.contador + contador} : item
+            }))
         }else{
-            setCarrito([...carrito,{producto,contador}])
+            setCart([...cart,{producto,contador}])
         }
     }
+    console.log(cart)
     const removeItem = (id) => {
-        const arrayBorrado = carrito.filter((producto) => {
+        const arrayBorrado = cart.filter((producto) => {
             return producto.id !== id
         })
-        setCarrito(arrayBorrado)
+        setCart(arrayBorrado)
     }
     
-    const isInCart = (id) => carrito.some((producto) => producto.id === id)
+    const isInCart = (id) => cart.some(item => item.producto.id === id)
 
     const clear = () => {
-        setCarrito([])
+        setCart([])
     }
 
     return(
-        <Context.Provider value={{carrito, addItem, removeItem, clear}}>
+        <Context.Provider value={{cart, addItem, removeItem, clear}}>
             {children}
         </Context.Provider>
     )

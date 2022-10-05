@@ -6,9 +6,21 @@
 
 .containerNav a{
     text-align: center;
+    text-decoration: none;
+    color: blueviolet;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.containerNav a:hover{
+    color: cyan;
 }
 
 .imagenNav{
     width: 380px;
     max-width: 50%;
+}
+
+.imgCarrito{
+    color: red;
 }

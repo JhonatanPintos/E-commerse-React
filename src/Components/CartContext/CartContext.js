@@ -4,15 +4,13 @@ export const Context = createContext()
 
 const CartContext = ({children}) => {    
     const [cart, setCart] = useState ([])
+    const [cantidad, setCantidad] = useState(0)
     const [precioT, setPrecioT] = useState(0)
 
     useEffect(() => {
-            const total = 0
-            cart.forEach((item) => {
-                total += item.price * item.contador
-            })
-            setPrecioT(total)
-    },[])
+        cantidadCarrito()
+        totalCompra()
+    },[cart])
 
     const addItem = (producto, contador) => {
         if(isInCart(producto.id)){
@@ -26,8 +24,8 @@ const CartContext = ({children}) => {
     console.log(cart)
 
     const removeItem = (id) => {
-        const arrayBorrado = cart.filter((producto) => {
-            return producto.id !== id
+        const arrayBorrado = cart.filter((item) => {
+            return item.id !== id
         })
         setCart(arrayBorrado)
     }
@@ -38,8 +36,24 @@ const CartContext = ({children}) => {
         setCart([])
     }
 
+    const cantidadCarrito = () => {
+        let cantidad = 0
+        cart.forEach((item) => {
+            return cantidad = cantidad + item.contador
+        })
+        setCantidad(cantidad)
+    }
+
+    const totalCompra = () => {
+        let total = 0
+        cart.forEach((item) => {
+            return total += item.price * item.contador
+        })
+        setPrecioT(total)
+    }
+
     return(
-        <Context.Provider value={{cart, addItem, removeItem, clear}}>
+        <Context.Provider value={{cart, addItem, removeItem, clear, cantidad, precioT}}>
             {children}
         </Context.Provider>
     )

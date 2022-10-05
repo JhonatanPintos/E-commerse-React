@@ -1,6 +1,88 @@
-.rojo{
+.inicioCarrito{
+    text-align: center;
+    color: blueviolet;
+}
+
+.inicioCarrito a{
+    color: blueviolet;
+}
+
+.inicioCarrito a:hover{
+    color: cyan;
+}
+
+.contenedorTotalCart{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 1000px;
+    margin: auto;
+}
+
+.contenedorCart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    background-color: bisque;
+    height: 150px;
+    gap: 20px;
+}
+
+.imgCart{
+    max-width: 9%;
+    margin: 80px;
+}
+
+.botonCart{
+    color: blueviolet;
+    border: none;
+    background-color: bisque;
+    font-weight: bold;
+    width: 70px;
+    margin-right: 5px;
+}
+
+.botonCart:hover{
     color: red;
 }
-.azul{
-    color: blue;
+
+.columna{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+.botonCartElminar, .botonCartElminar:hover {
+    background-color: white;
+    color: blueviolet;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none; 
+    border-radius: 10px;}
+    .botonCartElminar:hover {
+      color: red; }
+
+.indicieCart{
+    display: flex;
+    font-weight: bold;
+    background-color: bisque;
+    gap: 20px;
+    width: 1000px;
+}
+
+.columnaIndice{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+.prod{
+    margin-left: 260px;
+}
+
+.tot{
+    margin-right: 50px;
 }

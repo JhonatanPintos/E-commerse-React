@@ -15,7 +15,6 @@ const Item = ({product}) => {
         <img className="imagen" src={product.image}/>
         </Link>
         <p>${product.price}</p>
-        {/* <ItemCount stock={product.stock} initial={1} onAdd={onAdd}/> */}
         </div>
         </>
     )

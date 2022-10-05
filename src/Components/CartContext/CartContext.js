@@ -17,13 +17,14 @@ const CartContext = ({children}) => {
     const addItem = (producto, contador) => {
         if(isInCart(producto.id)){
             setCart(cart.map(item => {
-                return item.producto.id === producto.id ? {...item, contador: item.contador + contador} : item
+                return item.id === producto.id ? {...item, contador: item.contador + contador} : item
             }))
         }else{
-            setCart([...cart,{producto,contador}])
+            setCart([...cart,{...producto,contador}])
         }
     }
     console.log(cart)
+
     const removeItem = (id) => {
         const arrayBorrado = cart.filter((producto) => {
             return producto.id !== id
@@ -31,7 +32,7 @@ const CartContext = ({children}) => {
         setCart(arrayBorrado)
     }
     
-    const isInCart = (id) => cart.some(item => item.producto.id === id)
+    const isInCart = (id) => cart.some(item => item.id === id)
 
     const clear = () => {
         setCart([])

@@ -4,6 +4,9 @@ import ItemList from "../ItemList/ItemList"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useParams } from "react-router-dom"
 import ScaleLoader from "react-spinners/ScaleLoader";
+/* import { db } from "../firebase/firebase"
+import { getDocs, collection, query, where } from "firebase/firestore"
+ */
 
 const ItemListContainer = ({ greeting }) => {
 

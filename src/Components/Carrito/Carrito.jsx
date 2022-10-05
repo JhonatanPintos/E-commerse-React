@@ -16,7 +16,7 @@ const Carrito = ({condicion}) => {
                 : (
                     <>
                         {cart.map((item) => {
-                            return <Link key={item.producto.id}><h1>{item.producto.title}</h1></Link>
+                            return <h1 key={item.producto.id}>{item.producto.title}</h1>
                         })}
                     </>
                 )}

@@ -14,7 +14,7 @@ const ItemDetail = ({producto}) => {
         setIrCarrito(true)
         addItem(producto, contador)
     }
-    const stockTemporal = Math.floor(Math.random() * 100)
+
     return(
         <>
         <div className="bordeCardD">
@@ -22,7 +22,7 @@ const ItemDetail = ({producto}) => {
         <div className="cardD">
         <p>{producto.title}</p>
         <p>${producto.price}</p>
-        <p>{stockTemporal}</p>
+        <p>{producto.stock}</p>
         <span>{producto.description}</span>
         {irCarrito == true
         ?
@@ -30,7 +30,7 @@ const ItemDetail = ({producto}) => {
         <button className="botones">Terminar Compra</button>
         </Link>
         :
-        <ItemCount stock={stockTemporal} initial={1} onAdd={onAdd}/>
+        <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}/>
         }
         </div>
         </div>

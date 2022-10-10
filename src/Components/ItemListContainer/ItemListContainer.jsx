@@ -4,9 +4,9 @@ import ItemList from "../ItemList/ItemList"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useParams } from "react-router-dom"
 import ScaleLoader from "react-spinners/ScaleLoader";
-/* import { db } from "../firebase/firebase"
+import { db } from "../Firebase/Firebase"
 import { getDocs, collection, query, where } from "firebase/firestore"
- */
+
 
 const ItemListContainer = ({ greeting }) => {
 
@@ -15,23 +15,25 @@ const ItemListContainer = ({ greeting }) => {
     const [listProducts, setListProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
-    const URL_BASE = "https://fakestoreapi.com/products"
-    const URL_CATEGORY = "https://fakestoreapi.com/products/category/"
-
     useEffect(() => {
-        fetch(IdCategoria === undefined ? URL_BASE : `${URL_CATEGORY}${IdCategoria}`)
-            .then(response => response.json())
-            .then(data => {
-                const lista = data.map((product) => {
-                    return { ...product, stock: Math.floor(Math.random() * 100) }
-                })
-                setListProducts(lista)
-                setLoading(false)
-                    .catch(() => {
-                        console.log("No responde la API")
-                        console.error("No responde la API")
-                    })
+        const URL_BASE = collection(db, "productos")
+        const URL_CATEGORY = query (URL_BASE, where("category", "==", `${IdCategoria}`))
+        const listaProd = (IdCategoria === undefined ? URL_BASE : URL_CATEGORY)
+        getDocs (listaProd)
+        .then ((data) => {
+            const lista = data.docs.map((prod) => {
+                return{
+                    ...prod.data(),
+                    id: prod.id
+                }
             })
+            setListProducts(lista)
+            setLoading(false)
+            .catch(() => {
+                console.log("No responde la API")
+                console.error("No responde la API")
+            })
+        })
     }, [IdCategoria])
 
     return (

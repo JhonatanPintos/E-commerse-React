@@ -11,7 +11,7 @@ const Item = ({product}) => {
         <>
         <div className="cards">
         <p>{product.title}</p>
-        <Link to={`producto/${product.id}`}>
+        <Link to={`/producto/${product.id}`}>
         <img className="imagen" src={product.image}/>
         </Link>
         <p>${product.price}</p>

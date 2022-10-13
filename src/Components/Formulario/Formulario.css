@@ -1,0 +1,35 @@
+.contenedorForm {
+  margin: auto;
+  border: 5px solid blueviolet;
+  width: 500px;
+  height: 300px;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.formulario {
+  text-align: center;
+  border: 2px solid blueviolet;
+  height: 40px;
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  outline: none;
+}
+
+.formulario:hover {
+  border: 2px solid cyan;
+}
+
+.formulario::placeholder {
+  text-align: center;
+}
+
+.idCompra{
+  color: green;
+  font-weight: bold;
+}

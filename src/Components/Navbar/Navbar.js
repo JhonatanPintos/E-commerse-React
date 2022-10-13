@@ -2,7 +2,7 @@ import React from "react"
 import logo from "../../assets/logo.jpg"
 import {Nav} from "./Nav/Nav"
 import { CartWidget } from "./CartWidget/CartWidget"
-import { Link, NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./Navbar.css"
 
 const Navbar = ({nombre, apellido, id}) => {

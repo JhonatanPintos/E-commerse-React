@@ -86,3 +86,16 @@
 .tot{
     margin-right: 50px;
 }
+
+.contendorFinal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contenedorBotones{
+    display: flex;
+}

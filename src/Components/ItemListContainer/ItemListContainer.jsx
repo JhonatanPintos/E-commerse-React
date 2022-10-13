@@ -29,17 +29,17 @@ const ItemListContainer = ({ greeting }) => {
             })
             setListProducts(lista)
             setLoading(false)
-            .catch(() => {
-                console.log("No responde la API")
-                console.error("No responde la API")
-            })
         })
+        .catch(() => {
+            console.log("No responde la API")
+            console.error("No responde la API")
+    })
     }, [IdCategoria])
 
     return (
         <>
             <h1 className="titulo">{greeting}</h1>
-            {loading == true
+            {loading === true
                 ?
                 <div className="spinners">
                     <ScaleLoader color="blueviolet" />

@@ -3,7 +3,7 @@ import React, {useState, useEffect, createContext} from "react";
 export const Context = createContext()
 
 const CartContext = ({children}) => {    
-    const [cart, setCart] = useState ([])
+    const [cart, setCart] = useState (JSON.parse(localStorage.getItem("MiCarrito")) || [])
     const [cantidad, setCantidad] = useState(0)
     const [precioT, setPrecioT] = useState(0)
     const [usuarioF, setUsuarioF] = useState({
@@ -15,6 +15,7 @@ const CartContext = ({children}) => {
     useEffect(() => {
         cantidadCarrito()
         totalCompra()
+        localStorage.setItem("MiCarrito", JSON.stringify(cart))
     },[cart])
     
     const datosComprador = (e) => {

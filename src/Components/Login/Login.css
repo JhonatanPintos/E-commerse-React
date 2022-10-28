@@ -1,0 +1,56 @@
+.contenedorFormL {
+    margin: auto;
+    border: 5px solid blueviolet;
+    width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    text-align: center;
+  }
+
+.formularioL {
+    text-align: center;
+    border: 2px solid blueviolet;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    outline: none;
+  }
+
+  .formularioL:hover {
+    border: 2px solid cyan;
+  }
+  
+  .formularioL::placeholder {
+    text-align: center;
+  }
+
+  .textoL{
+    font-weight: bold;
+  }
+  .textoL a{
+    text-decoration: none;
+  }
+  .textoL a:hover{
+    color: blueviolet;
+  }
+
+  .contenedorImput{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .errorL{
+    color: red;
+    font-weight: bold;
+  }

@@ -1,0 +1,74 @@
+.columnaM{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+.contenedorTotalM{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 1000px;
+    margin: auto;
+}
+
+.contenedorM{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    background-color: bisque;
+    height: 150px;
+    gap: 20px;
+}
+
+.imgM{
+    max-width: 9%;
+    margin: 80px;
+}
+
+.indicieM{
+    display: flex;
+    font-weight: bold;
+    background-color: bisque;
+    gap: 20px;
+    width: 1000px;
+}
+
+.columnaIndiceM{
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+.prodM{
+    margin-left: 270px;
+}
+
+.contenedorCompradorM{
+    display: flex;
+    font-weight: bold;
+    background-color: bisque;
+    gap: 20px;
+    width: 1000px;
+}
+
+.contenedorFormM{
+    margin: auto;
+    border: 5px solid blueviolet;
+    width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    top: 20px;
+}
+
+.contenedorAbsolutoM{
+    display: flex;
+}

@@ -4,8 +4,10 @@ import {Nav} from "./Nav/Nav"
 import { CartWidget } from "./CartWidget/CartWidget"
 import { Link } from "react-router-dom"
 import "./Navbar.css"
-
+import { useAuth } from "../AuthContext/AuthContext"
 const Navbar = ({nombre, apellido, id}) => {
+
+    const {user, logOut} = useAuth()
 
 const categorias = [
     {id:0, nombre: "Electronics", ruta:"/categoria/electronics"},
@@ -14,18 +16,28 @@ const categorias = [
     {id:3, nombre: "Women's Clothing", ruta:"/categoria/women's clothing"}
 ]
 
+    const handleLogout = async () => {
+        await logOut()
+    }
+
     return(
         <>
+        {user === null ? "" :
         <header className="containerNav">
             <Link to={"/"}>
                 <img className="imagenNav" src={logo} alt="logo" />
             </Link>
-                <h1>Bienvenido {nombre}</h1>
+                <h1>Bienvenido {user.displayName || user.email}</h1>
         <Nav categorias={categorias} />
+            <Link to={"/micompra"}>
+                <p>Mis compras</p>
+            </Link>
+            <button className="botones" onClick={handleLogout}>Logout</button>
             <Link to={"/carrito"}>
                 <CartWidget />
             </Link>
         </header> 
+        }
         </>
     )
 }

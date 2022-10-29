@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useAuth } from "../AuthContext/AuthContext";
+import { Context } from "../CartContext/CartContext"
+import { WishContext } from "../WishContext/WishContext"
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css"
 
 const Login = () => {
+
+    const {clear} = useContext(Context)
+    const {clearW} = useContext(WishContext)
 
     const [userL, setUserL] = useState({
         email: "",
@@ -24,6 +29,8 @@ const Login = () => {
 
     const handleGoogleSignin = async () => {
         await loginWithGoogle()
+        clear()
+        clearW()
         navigate("/")
     }
 
@@ -32,6 +39,8 @@ const Login = () => {
         try {
             await login(userL.email, userL.password)
             navigate("/")
+            clear()
+            clearW()
         }
         catch (error) {
             if (error.code === "auth/invalid-email" || "auth/user-not-found") {

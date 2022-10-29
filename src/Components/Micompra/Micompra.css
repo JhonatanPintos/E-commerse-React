@@ -72,3 +72,8 @@
 .contenedorAbsolutoM{
     display: flex;
 }
+
+.contenedorFinal{
+    text-align: center;
+    margin: auto;
+}

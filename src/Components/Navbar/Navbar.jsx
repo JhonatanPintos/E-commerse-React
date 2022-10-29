@@ -5,7 +5,7 @@ import { CartWidget } from "./CartWidget/CartWidget"
 import { Link } from "react-router-dom"
 import "./Navbar.css"
 import { useAuth } from "../AuthContext/AuthContext"
-const Navbar = ({nombre, apellido, id}) => {
+const Navbar = () => {
 
     const {user, logOut} = useAuth()
 
@@ -32,6 +32,7 @@ const categorias = [
             <Link to={"/micompra"}>
                 <p>Mis compras</p>
             </Link>
+            <Link to={"/wishlist"}><p>Mi WishList</p></Link>
             <button className="botones" onClick={handleLogout}>Logout</button>
             <Link to={"/carrito"}>
                 <CartWidget />

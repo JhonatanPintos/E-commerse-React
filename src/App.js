@@ -10,6 +10,8 @@ import Login from "./Components/Login/Login";
 import AuthContext from "./Components/AuthContext/AuthContext";
 import Register from "./Components/Register/Register";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
+import WishList from "./Components/WishList/WishList";
+import WishContext from "./Components/WishContext/WishContext";
 
 const App = () => {
 
@@ -19,6 +21,7 @@ const App = () => {
         <>
             <BrowserRouter>
                 <AuthContext>
+                    <WishContext>
                     <CartContext>
                         <Navbar/>
                         <Routes>
@@ -27,10 +30,12 @@ const App = () => {
                             <Route path="/producto/:IdProducto" element={<ProtectedRoute><ItemDetailContainer /></ProtectedRoute>} />
                             <Route path="/carrito" element={<ProtectedRoute><Carrito /></ProtectedRoute>} />
                             <Route path="/micompra" element={<ProtectedRoute><Micompra /></ProtectedRoute>} />
+                            <Route path="/wishlist" element={<ProtectedRoute><WishList /></ProtectedRoute>} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                         </Routes>
                     </CartContext>
+                    </WishContext>
                 </AuthContext>
             </BrowserRouter>
         </>

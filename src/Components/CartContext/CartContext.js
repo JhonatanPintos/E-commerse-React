@@ -1,8 +1,13 @@
-import React, {useState, useEffect, createContext} from "react";
+import React, {useState, useEffect, createContext, useContext} from "react";
+import { WishContext } from "../WishContext/WishContext"
+
 
 export const Context = createContext()
 
 const CartContext = ({children}) => {    
+
+    const {cartW} = useContext(WishContext)
+
     const [cart, setCart] = useState (JSON.parse(localStorage.getItem("MiCarrito")) || [])
     const [cantidad, setCantidad] = useState(0)
     const [precioT, setPrecioT] = useState(0)
@@ -26,6 +31,11 @@ const CartContext = ({children}) => {
             [name]: value,
           };
           setUsuarioF(newValues)
+    }
+
+    const addToWish = () => {
+        clear()
+        setCart([...cartW])
     }
 
     const addItem = (producto, cantidad) => {
@@ -68,7 +78,7 @@ const CartContext = ({children}) => {
     }
 
     return(
-        <Context.Provider value={{cart, addItem, removeItem, clear, cantidad, precioT, datosComprador, usuarioF}}>
+        <Context.Provider value={{addToWish, cart, addItem, removeItem, clear, cantidad, precioT, datosComprador, usuarioF}}>
             {children}
         </Context.Provider>
     )

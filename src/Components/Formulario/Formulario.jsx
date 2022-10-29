@@ -1,11 +1,13 @@
 import React, {useContext, useState} from "react";
 import "./Formulario.css"
 import { Context } from "../CartContext/CartContext"
+import { useAuth } from "../AuthContext/AuthContext";
 
 
 const Formulario = ({finalizarCompra, idCompra}) => {
 
     const { usuarioF, datosComprador } = useContext(Context)
+    const {user} = useAuth()
     const [confirmar, setConfirmar] = useState(false)
 
     const terminar = () => {
@@ -18,7 +20,7 @@ const Formulario = ({finalizarCompra, idCompra}) => {
         <div className="contenedorForm">
             <input onChange={datosComprador} name="nombre" value={usuarioF.nombre} className="formulario" type="text" placeholder="Ingrese su Nombre"/>
             <input onChange={datosComprador} name="apellido" value={usuarioF.apellido} className="formulario" type="text" placeholder="Ingrese su Apellido"/>
-            <input onChange={datosComprador} name="email" value={usuarioF.email} className="formulario" type="text" placeholder="Ingrese su Email"/>
+            <input onChange={datosComprador} name="email" value={usuarioF.email = user.email} className="formulario" type="text" placeholder="Ingrese su Email"/>
             <button className="botones" onClick={terminar}>Finalizar compra</button>
             {confirmar === false
             ? ""

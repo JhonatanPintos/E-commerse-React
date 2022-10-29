@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useAuth } from "../AuthContext/AuthContext";
+import { Context } from "../CartContext/CartContext"
+import { WishContext } from "../WishContext/WishContext"
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+
+    const {clear} = useContext(Context)
+    const {clearW} = useContext(WishContext)
 
     const [userL, setUserL] = useState({
         email: "",
@@ -22,6 +27,8 @@ const Register = () => {
         setError("")
         try {
             await signUp(userL.email, userL.password)
+            clear()
+            clearW()
             navigate("/")
         }
         catch (error) {

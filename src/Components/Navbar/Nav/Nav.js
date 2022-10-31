@@ -1,11 +1,12 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 
-export const Nav = ({categorias}) => {
+export const Nav = ({listaCat}) => {
+
     return(
         <nav>
-            {categorias.map ((categoria)=>{
-                return <NavLink key={categoria.id} style={styles.links} to={categoria.ruta}>{categoria.nombre}</NavLink>
+            {listaCat.map ((categoria)=>{
+                return <NavLink key={categoria.key} style={styles.links} to={`/categoria/${categoria.key}`}>{categoria.nombre}</NavLink>
             })}
         </nav>
     )

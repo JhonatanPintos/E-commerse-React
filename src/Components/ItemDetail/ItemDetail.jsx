@@ -28,15 +28,22 @@ const ItemDetail = ({producto}) => {
         <div className="cardD">
         <p>{producto.title}</p>
         <p>${producto.price}</p>
-        <p>{producto.stock}</p>
+        {producto.stock === 0
+        ? <p>NO HAY STOCK</p>
+        : <p>{producto.stock}</p>
+        }
         <span>{producto.description}</span>
-        {irCarrito === true
+        {producto.stock === 0
+        ? ""
+        : 
+        (irCarrito === true
         ?
         <Link to={"/carrito"}>
         <button className="botones">Terminar Compra</button>
         </Link>
         :
         <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} onAddW={onAddW}/>
+        )
         }
         </div>
         </div>
